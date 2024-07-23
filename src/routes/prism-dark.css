@@ -11,7 +11,7 @@ pre[class*="language-"] {
 
 code[class*="language-"]::selection,
 pre[class*="language-"]::selection {
-  background-color: #3e4451; /* Selection background color */
+  /* background-color: #3e4451; Selection background color */
 }
 
 /* Line numbers */
@@ -24,7 +24,7 @@ pre[class*="language-"]::before {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #5c6370; /* Comment color */
+  /* color: #5c6370; Comment color */
 }
 
 .token.punctuation {
@@ -59,7 +59,7 @@ pre[class*="language-"]::before {
 .token.char,
 .token.builtin,
 .token.inserted::hover {
-  background-color: #3e4451; /* Selector, attribute name, string, char, builtin, inserted color */
+  /* background-color: #3e4451; Selector, attribute name, string, char, builtin, inserted color */
 }
 
 
@@ -70,7 +70,7 @@ pre[class*="language-"]::before {
 .style .token.string,
 .token.variable {
   color: #56b6c2; /* Operator, entity, URL, CSS string, style string, variable color */
-  background: #282c34;
+  
 }
 
 .token.atrule,
