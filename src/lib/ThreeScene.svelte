@@ -4,45 +4,47 @@
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
   
     let container;
-  
+    let model;
+    let elapsedTime;
     onMount(() => {
-      // Scene
       const scene = new THREE.Scene();
   
-      // Camera
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       camera.position.z = 4;
+      camera.position.y=0.05;
   
-      // Renderer
       const renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
       container.appendChild(renderer.domElement);
   
-      // Load 3D model
       const loader = new GLTFLoader();
-      loader.load('/models/android.gltf', (gltf) => {
+      loader.load('/models/AndroidBug.glb', (gltf) => {
         scene.add(gltf.scene);
         animate();
         gltf.scene.traverse((child)=>{
             if (child.isMesh) {
-            child.material.color.set(0x00ff00); 
+            // child.material.color.set(0x00ff00); 
             }
         })        
+        model=gltf.scene;
       }, undefined, (error) => {
         console.error(error);
       });
   
-      // Animation loop
+      let startTime = Date.now();
+      
       function animate() {
         requestAnimationFrame(animate);
-        // Rotate the model for some basic animation
-        if (scene.children[0]) {
-          scene.children[0].rotation.y += 0.01;
+        
+        if (model) {
+            elapsedTime = (Date.now() - startTime) / 1000;
+            scene.children[2].position.y = Math.sin(elapsedTime) * 0.1;
         }
         renderer.render(scene, camera);
       }
-      const light_1 = new THREE.DirectionalLight(0xffffff, 1);
-      const light_2 = new THREE.DirectionalLight(0xffffff, 1);
+
+      const light_1 = new THREE.DirectionalLight(0xffffff, 1.5);
+      const light_2 = new THREE.DirectionalLight(0xffffff, 1.5);
       
         light_1.position.set(1, 1, 1).normalize();
         light_2.position.set(0,1,1).normalize();
@@ -50,12 +52,17 @@
         scene.add(light_1,light_2);
 
 
-      // Handle window resize
       window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
       });
+
+      window.addEventListener('scroll', () => {
+      if (model) {
+        scene.children[2].rotation.y = window.scrollY * -0.01;
+      }
+    });
     });
   </script>
   
@@ -75,5 +82,5 @@
     }
   </style>
   
-  <div id="container" bind:this={container}></div>
+  <div id="container" style="background-image:url('/bg_2.png');background-position:center;" bind:this={container}></div>
   
