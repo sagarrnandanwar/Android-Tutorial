@@ -1,0 +1,103 @@
+/* Base styles */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #fc6a76; /* Base text color */
+  font-family: 'Fira Code', monospace;
+  padding: 1px;
+  margin: 1px;
+  padding-right: 6rem;
+  text-shadow: none;
+}
+
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection {
+  background-color: #3e4451; /* Selection background color */
+}
+
+/* Line numbers */
+pre[class*="language-"]::before {
+  display: none; /* Hide default line numbers if any */
+}
+
+/* Token styles */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5c6370; /* Comment color */
+}
+
+.token.punctuation {
+  color: #dbce14; /* Punctuation color */
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #e06c75; /* Property, tag, constant, symbol, deleted color */
+}
+
+.token.boolean,
+.token.number {
+  color: #d19a66; /* Boolean and number color */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #98c379; /* Selector, attribute name, string, char, builtin, inserted color */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted::hover {
+  background-color: #3e4451; /* Selector, attribute name, string, char, builtin, inserted color */
+}
+
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #56b6c2; /* Operator, entity, URL, CSS string, style string, variable color */
+  background: #282c34;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #61afef; /* At-rule, attribute value, function, class name color */
+}
+
+.token.keyword {
+  color: #c678dd; /* Keyword color */
+}
+
+.token.regex,
+.token.important {
+  color: #c678dd; /* Regex and important color */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
