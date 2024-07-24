@@ -7,39 +7,29 @@ interface data {
 
 export let Data : data [] =[
     {
-        markdown:"Hello this is Tanishq Dhote",
-        code:"export let tanishq = 'Tanishq Dhote'",
+        markdown:"",
+        code:"export let tanishq = 'Tanishq Dhote'\n print(tanishq);",
         output:"",
         outputIMG:""
     },{
         markdown:"",
-        code:"",
+        code:``,
         output:"",
-        outputIMG:""
+        outputIMG:"",
     },{
         markdown:"",
-        code:"",
+        code:``,
         output:"",
-        outputIMG:""
+        outputIMG:"",
     },{
         markdown:"",
-        code:"",
+        code:``,
         output:"",
-        outputIMG:""
+        outputIMG:"",
     },{
         markdown:"",
-        code:"",
+        code:``,
         output:"",
-        outputIMG:""
-    },{
-        markdown:"",
-        code:"",
-        output:"",
-        outputIMG:""
-    },{
-        markdown:"",
-        code:"",
-        output:"",
-        outputIMG:""
-    },
+        outputIMG:"",
+    }
 ]
